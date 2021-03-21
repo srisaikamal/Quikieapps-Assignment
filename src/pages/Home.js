@@ -19,7 +19,6 @@ const Home = () => {
       "https://finnhub.io/api/v1/stock/symbol?exchange=US&token=c1atgkn48v6rcdq9scsg"
     );
     setApidata(data);
-    console.log(data);
   };
 
   const SaveData = async ({ description, displaySymbol, currency, type }) => {
@@ -35,15 +34,11 @@ const Home = () => {
         "https://quikieapps-backend.herokuapp.com/api/table/add",
         formData
       );
-      console.log(data);
 
       if (data.status === 200) {
         setAlertOpen(true);
       }
-    } catch (error) {
-      console.log(error.message);
-    }
-    console.log(formData);
+    } catch (error) {}
   };
   const tableData = [];
   apidata &&

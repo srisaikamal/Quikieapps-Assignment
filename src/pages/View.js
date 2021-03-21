@@ -26,13 +26,10 @@ const View = () => {
       const data = await axios.delete(
         `https://quikieapps-backend.herokuapp.com/api/table/delete/${id}`
       );
-      console.log(data);
       if (data.status === 200) {
         fetchData();
       }
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   };
 
   const tableData = [];
